@@ -1,12 +1,19 @@
 #!/bin/sh
 
-if [ "$(expr match $(uname -s) 'MINGW64_NT*')" == "10" ]; then
-  ./gradlew.bat clean build
-else
-  ./gradlew clean build
+if [ "$(uname)" == "Darwin" ]; then
+   echo 'MAC'
+   ./gradlew clean build
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+   echo 'Linux'
+   ./gradlew clean build
+elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then
+   echo 'Window 32'
+   ./gradlew.bat clean build
+elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW64_NT" ]; then
+    echo 'Window 64'
+   ./gradlew.bat clean build
 fi
 
-# store the last exit code in a variable
 RESULT=$?
 
 exit $RESULT
