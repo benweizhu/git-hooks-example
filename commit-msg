@@ -1,6 +1,6 @@
 #!/bin/sh
 
-commit_regex='\[(FIX|ADD|UPD|DEL)\] [A-Z][a-zA-Z0-9 .,_()`\-]{5,48}[a-zA-Z0-9)`]'
+commit_regex='\[0-9]*'
 
 RED='\033[0;31m'
 NC='\033[0m' # No Color
