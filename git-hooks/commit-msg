@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 INPUT_FILE=$1
 START_LINE=`head -n1 $INPUT_FILE`
 PATTERN="^[[:digit:]]+ \[.+ \& .+\] \- .+"

@@ -19,6 +19,6 @@ dependencies {
 }
 
 task installGitHooks(type: Copy) {
-    from "$rootProject.rootDir/pre-commit", "$rootProject.rootDir/commit-msg"
+    from "$rootProject.rootDir/git-hooks/pre-commit", "$rootProject.rootDir/git-hooks/commit-msg"
     into "$rootProject.rootDir/.git/hooks"
 }
