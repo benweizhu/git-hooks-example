@@ -1,10 +1,7 @@
 package me.zeph.githook.demo;
 
-import org.springframework.stereotype.Service;
-
-@Service
 public class HelloService {
-  public String getHello(){
+  public String getHello() {
     return "Hello";
   }
 }
