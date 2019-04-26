@@ -4,6 +4,8 @@ INPUT_FILE=$1
 START_LINE=`head -n1 $INPUT_FILE`
 PATTERN="^[[:digit:]]+ \[.+ \& .+\] \- .+"
 if ! [[ "$START_LINE" =~ $PATTERN ]]; then
+  echo "Your commit message is:"
+  echo $START_LINE
   echo "Bad commit message, see example: 268817 [Mike & Ben] - add isolation test for order controller"
   exit 1
 fi
